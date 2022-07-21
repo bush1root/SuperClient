@@ -7,6 +7,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class Keys {
     @SubscribeEvent
     public void onKey(InputEvent.KeyInputEvent e) {
-        Client.keyPress(e.getKey());
+        Client.keyPress(e.getKey(), e.getAction());
     }
 }

@@ -1,6 +1,7 @@
 package com.example.examplemod.Module.imlp;
 
 import com.example.examplemod.Module.Module;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -22,5 +23,8 @@ public class GlowESP extends Module {
     @Override
     public void onDisable() {
         super.onDisable();
+        for (PlayerEntity p : mc.level.players()) {
+            p.setGlowing(false);
+        }
     }
 }
